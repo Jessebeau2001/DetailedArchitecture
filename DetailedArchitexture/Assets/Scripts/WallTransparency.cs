@@ -13,13 +13,12 @@ public class WallTransparency : MonoBehaviour {
         rend.sharedMaterial = material[0];
     }
 	
-	// Update is called once per frame
 	void Update () {
         if(Input.GetKeyDown("1"))
         {
-            int children = transform.childCount;
-            for (int i = 0; i < children; i++)
-                rend.sharedMaterial = material[1];
+            // int children = transform.childCount;
+            // for (int i = 0; i < children; i++)
+            rend.sharedMaterial = material[1];
         }
     }
 }
