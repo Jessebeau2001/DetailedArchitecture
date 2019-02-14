@@ -33,7 +33,8 @@ public class Teleport : MonoBehaviour {
 
     // On double-click, toggle teleport mode on and off.
     void UpdateTeleportEnabled() {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) { // The trigger is pressed.
+        // if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) { // The trigger is pressed.
+        if (Input.GetKeyDown("2")) {            //temp to disable bezier activation script
             if (!firstClick) { // The first click is detected.
                 firstClick = true;
                 firstClickTime = Time.unscaledTime;

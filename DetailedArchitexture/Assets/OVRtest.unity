@@ -1468,7 +1468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1699790456697960, guid: 41d2d2b7c43416948ad12785b670ddbf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4165376622330400, guid: 41d2d2b7c43416948ad12785b670ddbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 1370179995}
   - component: {fileID: 1370179994}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: TestCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

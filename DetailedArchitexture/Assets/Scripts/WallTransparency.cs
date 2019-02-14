@@ -5,23 +5,25 @@ using UnityEngine;
 public class WallTransparency : MonoBehaviour {
 
     public Material[] material;
-    Renderer rend;
-    private GameObject[] wallList; // new test code
-
+    private GameObject[] wallList;
+    private int materialIndex;
     void Start () {
-        wallList = new GameObject[transform.childCount]; // new test code
+        wallList = new GameObject[transform.childCount];
 
         for (int i = 0; i < transform.childCount; i++)
             wallList[i] = transform.GetChild(i).gameObject;
-
-
     }
 	
 	void Update () {
-        if(Input.GetKeyDown("1"))
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
+            materialIndex--;
+            if (materialIndex <0)
+                materialIndex = 1;
+
             foreach(GameObject go in wallList)
-                go.GetComponent<Renderer>().sharedMaterial = material[1];            
+                go.GetComponent<Renderer>().sharedMaterial = material[materialIndex];
         }
+    
     }
 }
