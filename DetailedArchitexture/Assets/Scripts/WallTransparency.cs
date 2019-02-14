@@ -6,19 +6,22 @@ public class WallTransparency : MonoBehaviour {
 
     public Material[] material;
     Renderer rend;
+    private GameObject[] wallList; // new test code
 
     void Start () {
-        rend = GetComponentInChildren<Renderer>();
-        rend.enabled = true;
-        rend.sharedMaterial = material[0];
+        wallList = new GameObject[transform.childCount]; // new test code
+
+        for (int i = 0; i < transform.childCount; i++)
+            wallList[i] = transform.GetChild(i).gameObject;
+
+
     }
 	
 	void Update () {
         if(Input.GetKeyDown("1"))
         {
-            // int children = transform.childCount;
-            // for (int i = 0; i < children; i++)
-            rend.sharedMaterial = material[1];
+            foreach(GameObject go in wallList)
+                go.GetComponent<Renderer>().sharedMaterial = material[1];            
         }
     }
 }
