@@ -17,6 +17,7 @@ public class Teleport : MonoBehaviour {
 
 	void Start () {
         teleportEnabled = false;
+        ToggleTeleportMode();
         firstClick = false;
         firstClickTime = 0f;
         teleportSprite.SetActive(false);
@@ -55,7 +56,7 @@ public class Teleport : MonoBehaviour {
             teleportSprite.SetActive(true);
             teleportSprite.transform.position = bezier.EndPoint;
 
-            if (OVRInput.GetDown(OVRInput.Button.One)) // Teleport to the position.
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) // Teleport to the position.
                 TeleportToPosition(bezier.EndPoint);
         } else {
             teleportSprite.SetActive(false);
@@ -63,7 +64,8 @@ public class Teleport : MonoBehaviour {
     }
 
     void TeleportToPosition(Vector3 teleportPos) {
-        gameObject.transform.position = teleportPos + Vector3.up * 0.5f;
+        // gameObject.transform.position = teleportPos + Vector3.up * 0.5f;
+        gameObject.transform.position = teleportPos + Vector3.up * 5f;
     }
 
     // Optional: use the touchpad to move the teleport point closer or further.

@@ -15,7 +15,7 @@ public class WallTransparency : MonoBehaviour {
     }
 	
 	void Update () {
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        if(OVRInput.GetDown(OVRInput.Button.One))
         {
             materialIndex--;
             if (materialIndex <0)

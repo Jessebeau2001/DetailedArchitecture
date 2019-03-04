@@ -68,7 +68,7 @@ public class Bezier : MonoBehaviour {
 
             if (i == SEGMENT_COUNT) { // For the last point, project out the curve two more meters.
                 Vector3 endDirection = Vector3.Normalize(prevPosition - lineRenderer.GetPosition(i-2));
-                nextPosition = prevPosition + endDirection * 2f;
+                nextPosition = prevPosition + endDirection * 20f;
             } else {
                 nextPosition = CalculateBezierPoint(t, controlPoints[0], controlPoints[1], controlPoints[2]);
             }
